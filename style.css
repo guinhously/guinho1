@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background: radial-gradient(circle, #000020, #000000);
+    color: #0ff;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 50px;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    animation: glow 1.5s infinite alternate;
+}
+
+p {
+    font-size: 20px;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+    to {
+        text-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+    }
+}
