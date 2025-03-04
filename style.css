@@ -1,33 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: radial-gradient(circle, #000020, #000000);
-    color: #0ff;
     font-family: 'Orbitron', sans-serif;
-    text-align: center;
     overflow: hidden;
+    background: black;
 }
 
-.container {
-    margin-top: 50px;
-    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+/* Fundo animado */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://wallpaperaccess.com/full/1906406.jpg') no-repeat center center/cover;
+    animation: moveBackground 20s linear infinite alternate;
+    z-index: -1;
 }
 
+@keyframes moveBackground {
+    0% { transform: scale(1.1) translateX(0); }
+    100% { transform: scale(1.2) translateX(-50px); }
+}
+
+/* Caixa de vidro */
+.glass-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+}
+
+/* Efeitos de brilho nos textos */
 h1 {
     font-size: 50px;
-    text-transform: uppercase;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px cyan;
     animation: glow 1.5s infinite alternate;
 }
 
 p {
     font-size: 20px;
+    color: #0ff;
+    text-shadow: 0 0 10px cyan;
 }
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        text-shadow: 0 0 10px cyan, 0 0 20px cyan;
     }
     to {
-        text-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+        text-shadow: 0 0 20px cyan, 0 0 40px cyan;
     }
 }
